@@ -22,7 +22,7 @@ build_docker_args() {
 
         LIB_ARGS=""
         for lib in $NV_LIBS; do
-                LIB_ARGS="$LIB_ARGS -v $lib:$lib"
+                LIB_ARGS="$LIB_ARGS -v $lib:/usr/tegra/$lib"
         done
 
         #set the required devices to be passed through to the container
@@ -38,7 +38,7 @@ build_env() {
         #build the LD_LIBRARY_PATH
         LD_LIBRARY_PATH=""
         for lib in $LD_PATH; do
-                LD_LIBRARY_PATH="$LD_LIBRARY_PATH:$lib"
+                LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/usr/tegra/$lib"
         done
 }
 

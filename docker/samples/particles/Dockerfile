@@ -1,4 +1,4 @@
-FROM arm64v8/ubuntu:16.04
+FROM mannyfm/tx2-tensorflow
 
 RUN mkdir /cudaSamples
 
